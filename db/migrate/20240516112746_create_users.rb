@@ -3,8 +3,10 @@ class CreateUsers < ActiveRecord::Migration[6.1]
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.integer :city_id
-      t.integer :country_id
+      t.string :first_name
+      t.string :last_name
+      t.integer :address_id
+      t.json :healthcare_info
 
       t.timestamps
     end

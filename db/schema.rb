@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_05_16_112857) do
+ActiveRecord::Schema.define(version: 2024_05_16_113611) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "line1"
+    t.string "line2"
+    t.string "postcode"
+    t.integer "city_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "attendees", force: :cascade do |t|
     t.integer "user_id"
@@ -22,20 +31,23 @@ ActiveRecord::Schema.define(version: 2024_05_16_112857) do
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.integer "country_id"
+    t.json "polygon_info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
+    t.json "polygon_info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.integer "city_id"
-    t.integer "country_id"
+    t.integer "address_id"
+    t.date "event_date"
+    t.integer "participant_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,8 +55,10 @@ ActiveRecord::Schema.define(version: 2024_05_16_112857) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "city_id"
-    t.integer "country_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "address_id"
+    t.json "healthcare_info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
