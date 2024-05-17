@@ -86,6 +86,8 @@ GEM
     date (3.3.4)
     erubi (1.12.0)
     execjs (2.9.1)
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -123,6 +125,7 @@ GEM
     nio4r (2.7.3)
     nokogiri (1.16.5-arm64-darwin)
       racc (~> 1.4)
+    pg (1.4.5)
     public_suffix (5.0.5)
     puma (5.6.8)
       nio4r (~> 2.0)
@@ -222,8 +225,10 @@ DEPENDENCIES
   bootstrap-sass (~> 3.4.1)
   byebug
   capybara (>= 3.26)
+  faker
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.7)
