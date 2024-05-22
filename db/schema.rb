@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_05_16_113611) do
+ActiveRecord::Schema.define(version: 2024_05_21_081716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -51,13 +51,11 @@ ActiveRecord::Schema.define(version: 2024_05_16_113611) do
     t.string "name"
     t.integer "address_id"
     t.date "event_date"
-    t.integer "participant_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "email"
     t.string "first_name"
     t.string "last_name"
