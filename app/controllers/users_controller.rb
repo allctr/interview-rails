@@ -15,11 +15,4 @@ class UsersController < ApplicationController
       end
     render json: { status: 'success', users: users }
   end
-
-  # Returns first 100 users, ordered alphabetically, who live in London
-  # Fields: first_name, last_name, email
-  #
-  def londoners
-    # Your code here
-  end
 end
