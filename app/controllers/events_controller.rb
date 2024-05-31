@@ -14,9 +14,9 @@ class EventsController < ApplicationController
     render json: { status: :success, events: events }
   end
 
-  # Receive params: event_name as string, get the users who attended in alphabetical order 
-  # Fields: first_name, last_name, email, city_name, country_name
-  def attendees_for 
-    # Your code here
+  # Receive params: year as integer, list the top 100 events, starting from the most recent ones
+  # Fields: name, event_date, city_name, country_name
+  def all_in_year 
+    # Your code here 
   end
 end
