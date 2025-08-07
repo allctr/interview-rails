@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_05_21_081716) do
+ActiveRecord::Schema[7.2].define(version: 2024_05_21_081716) do
+  create_schema "_heroku"
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -21,38 +22,38 @@ ActiveRecord::Schema.define(version: 2024_05_21_081716) do
     t.string "line2"
     t.string "postcode"
     t.integer "city_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "attendees", force: :cascade do |t|
     t.integer "user_id"
     t.integer "event_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.integer "country_id"
     t.json "polygon_info"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.json "polygon_info"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.integer "address_id"
     t.date "event_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,8 +62,7 @@ ActiveRecord::Schema.define(version: 2024_05_21_081716) do
     t.string "last_name"
     t.integer "address_id"
     t.json "healthcare_info"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
 end
